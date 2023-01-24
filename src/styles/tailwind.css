@@ -1,0 +1,60 @@
+@tailwind base;
+
+/* Your own custom base styles */
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Your own custom component styles */
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
+
+html,
+body {
+  background: #f0f2f5;
+}
+
+.spinner {
+  animation: spin 2s linear infinite;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.spinner .path {
+  stroke: #29d;
+  stroke-linecap: round;
+  animation: spinner-path 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: spin(360deg);
+  }
+}
+
+@keyframes spinner-path {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
